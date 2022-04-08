@@ -15,3 +15,9 @@ print(teste(12))
 
 s = pd.Series(([1,3,5,np.nan,6,8]))
 print(s)
+
+carteira = ['ITUB4.SA','ITSA3.SA']
+mdata = pd.DataFrame()
+
+for t in carteira:
+    mdata[t] = pandas.read_table(t,data_source ='yahoo',start='2021-1-1')['Adj Close']
