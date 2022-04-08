@@ -13,6 +13,5 @@ def lol():
 
 print(teste(12))
 
-
 s = pd.Series(([1,3,5,np.nan,6,8]))
 print(s)
