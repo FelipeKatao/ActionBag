@@ -18,6 +18,3 @@ print(s)
 
 carteira = ['ITUB4.SA','ITSA3.SA']
 mdata = pd.DataFrame()
-
-for t in carteira:
-    mdata[t] = pandas.read_table(t,data_source ='yahoo',start='2021-1-1')['Adj Close']
