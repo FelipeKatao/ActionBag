@@ -14,4 +14,3 @@ def ConsultarIndice(indice,periodo):
   pass
 
 CdiConsultData(12,2)
-print(ConsultarIndice("PETR4.SA","1mo"))

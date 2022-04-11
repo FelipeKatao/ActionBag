@@ -1,20 +1,12 @@
+from argparse import Action
 import pandas
 import numpy as np
 import pandas as pd
-def teste(a):
-    a = a+2;
-    return a
-    pass
+import actions as ac
+
 def main():
-    print("Hello World")
-
-def lol():
+    ConsultarIndice = ac
+    print(ConsultarIndice.ConsultarIndice("PETR4.SA","1"))
     pass
 
-print(teste(12))
-
-s = pd.Series(([1,3,5,np.nan,6,8]))
-print(s)
-
-carteira = ['ITUB4.SA','ITSA3.SA']
-mdata = pd.DataFrame()
+main()
