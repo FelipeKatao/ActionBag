@@ -14,7 +14,7 @@ def main():
 
 @app.route('/<string:nome>')
 def error(nome):
-    variavel = f'Pagina ({nome}) não existe'
+    variavel =nome
     return render_template("error.html", variavel = variavel)
 
 if __name__ == "__main__":
