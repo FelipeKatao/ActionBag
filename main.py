@@ -7,10 +7,15 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/',methods=["GET","POST"])
+@app.route('/',methods=["GET"])
 def main():
     variavel =  "ticket"
     return render_template("index.html", variavel = variavel)
+
+@app.route('acao/<string:ticket>')
+def ticketload(ticket):
+    ticketSet = ticket
+    return render_template("tickets.html",ticketSet = ticketSet)
 
 @app.route('/<string:nome>')
 def error(nome):
