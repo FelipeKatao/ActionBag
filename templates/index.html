@@ -9,14 +9,18 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <title>Bem vindo a ActionBag</title>
     <style>
+        .articles{
+            margin-top: 2vh;
+            margin-left: 2vh;
+        }
         body{
             background-color: black;
-            color: white;
         }
         .navbar{
             color:#e4e448;
             font-weight: bold;
             background-color: #797777;
+            position: fixed;
         }
         .navbar a{
             color: #FFFF;
@@ -52,5 +56,27 @@
           </div>
         </div>
       </nav>
+
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://cointimes.com.br/wp-content/uploads/2019/12/investimentos-para-2020.jpg"  class="d-block w-100" alt="Acessar ações">
+          </div>
+        </div>
+      </div>
+
+      <div class="articles">
+
+      <div class="card" style="width: 18rem;">
+        <img src="https://www.infomoney.com.br/wp-content/uploads/2019/06/acoes-indices-grafico-alta-bolsa-mercado.jpg?fit=900%2C600&quality=75&strip=all" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+    </div>
+
 </body>
 </html>
