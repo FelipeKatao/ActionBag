@@ -16,8 +16,10 @@ def main():
 @app.route('/acao/<string:ticket>')       
 def ticketload(ticket):
     ticketSet = ticket
+    ticketname = ticket
+    ticketnameSet = ticketname 
     ticketRead = ac.ConsultarIndice(ticket,'1y')
-    return render_template("tickets.html",ticketSet = ticketRead)
+    return render_template("tickets.html",ticketSet = ticketRead,ticketname = ticketnameSet )
 
 @app.route('/acao/<string:ticket>/<int:year>')       
 def ticketloadPeriod(ticket,periodo):
