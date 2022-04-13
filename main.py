@@ -13,14 +13,14 @@ def main():
     variavel =  "ticket"
     return render_template("index.html", variavel = variavel)
 
-@app.route('/acao/<string:ticket>')
+@app.route('/acao/<string:ticket>')   
 def ticketload(ticket):
     ticketSet = ticket
     ticketRead = ac.ConsultarIndice(ticket,'1d')
     return render_template("tickets.html",ticketSet = ticketRead)
 
 @app.route('/<string:nome>')
-def error(nome):
+def error(nome):   
     variavel =nome
     return render_template("error.html", variavel = variavel)  
 
