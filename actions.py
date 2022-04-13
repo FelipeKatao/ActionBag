@@ -1,3 +1,5 @@
+import pandas_datareader
+import datetime
 import yfinance as yf
 import pandas as pd
 
@@ -11,6 +13,6 @@ def CdiConsultData(CdiData,valoresARecuperar):
 def ConsultarIndice(indice,periodo):
   lmt = yf.Ticker(indice)
   hist = lmt.history(period=periodo)
-  return hist 
-
-CdiConsultData(12,2)
+  data = pandas_datareader.get_data_yahoo(indice,start="2021",end="2022")
+  print(data.values)
+  return data 
