@@ -7,7 +7,7 @@ def CdiConsultData(CdiData,valoresARecuperar):
    df = pd.read_json(url)
    print(df) 
    pass  
- 
+       
 def ConsultarIndice(indice,periodo):
   lmt = yf.Ticker(indice)
   hist = lmt.history(period=periodo)

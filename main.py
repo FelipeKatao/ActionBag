@@ -13,7 +13,7 @@ def main():
     variavel =  "ticket"
     return render_template("index.html", variavel = variavel)
 
-@app.route('/acao/<string:ticket>')   
+@app.route('/acao/<string:ticket>')       
 def ticketload(ticket):
     ticketSet = ticket
     ticketRead = ac.ConsultarIndice(ticket,'1d')
