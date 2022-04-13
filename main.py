@@ -22,7 +22,7 @@ def ticketload(ticket):
 @app.route('/<string:nome>')
 def error(nome):
     variavel =nome
-    return render_template("error.html", variavel = variavel)
+    return render_template("error.html", variavel = variavel)  
 
 if __name__ == "__main__":
-    app.run();
+   app.run(use_debugger=False, use_reloader=True, passthrough_errors=True) 
