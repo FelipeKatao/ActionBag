@@ -73,17 +73,19 @@
 
 
         {% for i,key in ticketSet.iterrows() %}
+        {%for x in ticketSet.index%}
         <tbody>
-          <tr>
-            <th scope="row">1</th>
+          <tr>           
+            <th scope="row">{{ x  }}</th>          
             <td>{{ key['High'] }}</td>
             <td>{{ key['Low'] }}</td>
             <td>{{ key['Open'] }}</td>
             <td>{{ key['Close'] }}</td>
             <td>{{ key['Volume'] }}</td>
-            <td>{{ key['AdjClose'] }}</td>
+            <td>{{ key['Adj Close'] }}</td>
           </tr>
         </tbody>
+        {% endfor %}
         {% endfor %}
       </table>
 

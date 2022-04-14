@@ -13,6 +13,24 @@ def CdiConsultData(CdiData,valoresARecuperar):
 def ConsultarIndice(indice,periodo):
   lmt = yf.Ticker(indice)
   hist = lmt.history(period=periodo)
-  data = pandas_datareader.get_data_yahoo(indice,start="2021",end="2022")
+  today = datetime.date.today()
+  getData = today.strftime('%Y-%m-%d')
+  getData2 = today.strftime('%Y')
+  getdata3 = today.strftime("%m")
+  data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
   print(data.values)
   return data 
+
+def ConsultarIndiceData(indice,periodo,encerramento):
+  lmt = yf.Ticker(indice)
+  hist = lmt.history(period=periodo)
+  today = datetime.date.today()
+  getData = today.strftime('%Y-%m-%d')
+  getData2 = today.strftime('%Y')
+  getdata3 = today.strftime("%m")
+  print(getData2+"")
+  print(getData)
+  data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
+  
+  return data 
+ 

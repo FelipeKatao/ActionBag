@@ -1,5 +1,6 @@
 from argparse import Action
 import argparse
+from datetime import date
 import pandas
 import numpy as np
 import pandas as pd
@@ -21,10 +22,16 @@ def ticketload(ticket):
     ticketRead = ac.ConsultarIndice(ticket,'1y')
     return render_template("tickets.html",ticketSet = ticketRead,ticketname = ticketnameSet )
 
-@app.route('/acao/<string:ticket>/<int:year>')       
-def ticketloadPeriod(ticket,periodo):
-    ticketRead = ac.ConsultarIndice(ticket,periodo)  
-    return render_template("tickets.html",ticketSet = periodo)
+@app.route('/acao/<string:ticket>')       
+def ticketloadPeriod(ticket):
+    ticketRead = ac.ConsultarIndice(ticket,0)  
+    return render_template("tickets.html",ticketSet = ticketRead)
+
+@app.route('/acao/<string:ticket>/<string:dateInit>/<string:dateEnd>')
+def ticketPeriodDate(ticket,dateInit,dateEnd):
+    ticketname = ticket
+    ticketRead = ac.ConsultarIndiceData(ticket,dateInit,dateEnd)
+    return render_template("tickets.html",ticketSet=ticketRead,dateInit=dateInit,dateEnd=dateEnd,ticketname = ticketname)  
 
 @app.route('/<string:nome>')
 def error(nome):        
@@ -32,4 +39,4 @@ def error(nome):
     return render_template("error.html", variavel = variavel)  
 
 if __name__ == "__main__":
-   app.run(use_debugger=False, use_reloader=True, passthrough_errors=True) 
+   app.run(use_debugger=False, use_reloader=True, passthrough_errors=True)   
