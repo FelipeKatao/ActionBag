@@ -2,6 +2,7 @@ import pandas_datareader
 import datetime
 import yfinance as yf
 import pandas as pd
+import json
 
 def CdiConsultData(CdiData,valoresARecuperar): 
   # url = 'http://api.bcb.gov.br/dados/serie/bcdata.sgs.{}/dados?formato=json'.format(CdiData)
@@ -18,6 +19,11 @@ def ConsultarIndice(indice,periodo):
   getData2 = today.strftime('%Y')
   getdata3 = today.strftime("%m")
   data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
+  print(data.reset_index().to_json(None,orient='records',date_format='iso'))
+  jsonData = data.reset_index().to_json(None,orient='records',date_format='iso')
+  with open(jsonData) as f:
+    datax = json.load(f)
+  print(datax)
   print(data.values)
   return data 
 
