@@ -2,6 +2,11 @@
 .articlesBar{
    margin-top: 2vh;
     margin-left: 2vh;
+    float: left;
+}
+.card{
+    float: left;
+    margin-left: 2vh;
 }
 body{
     background-color: #363636;
@@ -43,4 +48,13 @@ body{
 }
 .articles .btn{
     margin-top: 1vh;
+}
+footer{
+    background-color: #7e7c7c;
+    bottom: auto;
+    margin-top: 60vh;
+    width: auto;
+    text-align: center;
+    color: white;
+    padding: 4vh;
 }
