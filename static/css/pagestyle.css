@@ -1,0 +1,46 @@
+
+.articlesBar{
+   margin-top: 2vh;
+    margin-left: 2vh;
+}
+body{
+    background-color: #363636;
+}
+.navbar{
+    color:#e4e448;
+    background: rgb(148,148,148);
+    background: linear-gradient(8deg, rgba(148,148,148,1) 0%, rgba(80,80,80,1) 35%, rgba(28,28,28,1) 100%);
+    
+}
+.navbar a{
+    color: #FFFF;
+}
+.navbar a:hover{
+    color: #bebe38;
+}
+.navbar:visited{
+    color: #e4e448;
+}
+
+#banner01{
+    background-color: black;
+    top:0;
+    margin-top: -2vh;
+    height: 50vh;
+
+}
+.articles{
+    position: absolute;
+    margin-top: 12vh;
+    margin-left: 5vh;
+}
+.articles h1 {
+    font-weight: bold;
+    color: #bebe38;
+}
+.articles h3{
+    color: #FFFF;
+}
+.articles .btn{
+    margin-top: 1vh;
+}
