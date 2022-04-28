@@ -13,7 +13,7 @@ def CdiConsultData(CdiData,valoresARecuperar):
    pass  
        
 def ConsultarIndice(indice,periodo):
-  lmt = yf.Ticker(indice)
+   lmt = yf.Ticker(indice)
   hist = lmt.history(period=periodo)
   today = datetime.date.today()
   getData = today.strftime('%Y-%m-%d')
