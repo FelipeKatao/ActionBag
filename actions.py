@@ -36,7 +36,7 @@ def ConsultarIndiceData(indice,periodo,encerramento):
   getData2 = today.strftime('%Y')
   getdata3 = today.strftime("%m")
   print(getData2+"/")
-   print(getData2+"/")
+  print(getData2+"/")
   print(getData)
   data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
   
