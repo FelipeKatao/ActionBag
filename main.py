@@ -36,6 +36,7 @@ def ticketPeriodDate(ticket,dateInit,dateEnd):
 @app.route('/<string:nome>')
 def error(nome):        
     variavel =nome
+    print(variavel)
     return render_template("error.html", variavel = variavel)  
 
 if __name__ == "__main__":
