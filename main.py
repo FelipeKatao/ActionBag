@@ -30,7 +30,7 @@ def ticketloadPeriod(ticket):
 @app.route('/acao/<string:ticket>/<string:dateInit>/<string:dateEnd>')
 def ticketPeriodDate(ticket,dateInit,dateEnd):
     ticketname = ticket
-    print("ticket")
+    print("ticket ")
     ticketRead = ac.ConsultarIndiceData(ticket,dateInit,dateEnd)
     return render_template("tickets.html",ticketSet=ticketRead,dateInit=dateInit,dateEnd=dateEnd,ticketname = ticketname)  
 
