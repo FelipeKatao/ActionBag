@@ -10,7 +10,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('actionbaghomol.herokuapp.com',methods=["GET"])
+@app.route('/',methods=["GET"])
 def main():
     variavel =  "ticket"
     return render_template("index.html", variavel = variavel)
