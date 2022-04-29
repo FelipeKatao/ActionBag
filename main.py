@@ -41,4 +41,5 @@ def error(nome):
     return render_template("error.html", variavel = variavel)  
 
 if __name__ == "__main__":
-   app.run(use_debugger=False, use_reloader=True, passthrough_errors=True)   
+   port = int(os.environ.get('PORT', 5000))
+   app.run(use_debugger=False, use_reloader=True, passthrough_errors=True,port=port)   
