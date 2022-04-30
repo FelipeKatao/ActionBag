@@ -96,7 +96,7 @@ def getAbertura(indice):
   today = datetime.date.today()
   getData = today.strftime('%Y-%m-%d')
   getData2 = today.strftime('%Y')
-  getdata3 = today.strftime("%m")       
+  getdata3 = today.strftime("%m")
   data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
   return data['Open'].iloc[-1]
 
@@ -106,4 +106,4 @@ def getFechamento(indice):
   getData2 = today.strftime('%Y')
   getdata3 = today.strftime("%m")       
   data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
-  return data['Close'].iloc[-1]    
+  return data['Close'].iloc[-1]     

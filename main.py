@@ -39,14 +39,18 @@ def dashboard(ticket1,ticket2,ticket3):
     ticketRead3 = ac.getVolumeTotal(ticket3)
     aberturaFechamento = [[ticket1,ac.getAbertura(ticket1),ac.getFechamento(ticket1)],[ticket2,ac.getAbertura(ticket2),ac.getFechamento(ticket2)],[ticket3,ac.getAbertura(ticket3),ac.getFechamento(ticket3)]]
     VolumeTicketsTotal = [[ticket1,ticketRead1],[ticket2,ticketRead2],[ticket3,ticketRead3]]
-    return render_template("dashboard.html",ticket1=ticket1,ticket2=ticket2,ticket3=ticket3,VolumeTicketsTotal=VolumeTicketsTotal,aberturaFechamento=aberturaFechamento)   
+    VolumesMensais1 = ac.getVolumeFinalInicial(ticket1)
+    VolumesMensais2 = ac.getVolumeFinalInicial(ticket2)
+    VolumesMensais3 = ac.getVolumeFinalInicial(ticket3)
+    return render_template("dashboard.html",ticket1=ticket1,ticket2=ticket2,ticket3=ticket3,VolumeTicketsTotal=VolumeTicketsTotal,aberturaFechamento=aberturaFechamento,VolumesMensais1=VolumesMensais1,VolumesMensais2=VolumesMensais2,VolumesMensais3=VolumesMensais3)   
 
 @app.route('/acao/<string:ticket>/<string:dateInit>/<string:dateEnd>')
 def ticketPeriodDate(ticket,dateInit,dateEnd):
     ticketname = ticket
-    print("ticket")
+    print("ticket") 
     ticketRead = ac.ConsultarIndiceData(ticket,dateInit,dateEnd)
     return render_template("tickets.html",ticketSet=ticketRead,dateInit=dateInit,dateEnd=dateEnd,ticketname = ticketname)  
+
 @app.route('/result/<string:ticket>')
 def ticketResults(ticket): 
     ticketName = ticket
@@ -55,6 +59,7 @@ def ticketResults(ticket):
     valorCompra = f'{valorCompra:.2f}'
     volume = ac.getVolumeFinalInicial(ticket)
     return render_template("tickets.html",ticketName = ticketName,ticketResultData = ticketResultData,valorCompra=valorCompra,volume=volume)
+
 @app.route('/<string:nome>')
 def error(nome):         
     variavel =nome

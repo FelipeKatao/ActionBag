@@ -24,7 +24,7 @@
                 <a class="nav-link active" aria-current="page" href="/acao">Ações</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">DashBoard</a>
+                <a class="nav-link" href="/dashboard/MSFT/GOOGL/AAPL">DashBoard</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -105,22 +105,23 @@
                 <div class="displays alignCenter"> <h4>{{ticket1}} <span class="badge cor-red"> 
                     </span></h4> 
                 </div>
-                <h5>Volume inicial: { volume[0] }</h5>
-                <h5>Volume presente: { volume[1] }</h5>
+                {{ VolumesMensais }}
+                <h5>Volume inicial: {{ VolumesMensais1[0] }}</h5>
+                <h5>Volume presente: {{ VolumesMensais1[1] }}</h5>
             </div>
             <div class="square">
                 <div class="displays alignCenter"> <h4>{{ticket2}} <span class="badge cor-green"> 
                     </span></h4> 
                 </div>
-                <h5>Volume inicial: { volume[0] }</h5>
-                <h5>Volume presente: { volume[1] }</h5>
+                <h5>Volume inicial: {{ VolumesMensais2[0] }}</h5>
+                <h5>Volume presente: {{ VolumesMensais2[1] }}</h5>
             </div>
             <div class="square">
                 <div class="displays alignCenter"> <h4>{{ticket3}} <span class="badge cor-blue"> 
                     </span></h4> 
                 </div>
-                <h5>Volume inicial: { volume[0] }</h5>
-                <h5>Volume presente: { volume[1] }</h5>
+                <h5>Volume inicial: {{ VolumesMensais3[0] }}</h5>
+                <h5>Volume presente: {{ VolumesMensais3[1] }}</h5>
             </div>
         </div>
         <div class="displays"></div>
