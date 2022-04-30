@@ -4,6 +4,8 @@ import yfinance as yf
 import pandas as pd
 import json
 
+from templates.CalcAction import CalcRenta
+
 def CdiConsultData(CdiData,valoresARecuperar): 
   # url = 'http://api.bcb.gov.br/dados/serie/bcdata.sgs.{}/dados?formato=json'.format(CdiData)
    url = 'http://api.bcb.gov.br/dados/serie/bcdata.sgs.{}/dados/ultimos/{}?formato=json'.format(CdiData,valoresARecuperar)
@@ -39,6 +41,15 @@ def ConsultarIndiceData(indice,periodo,encerramento):
   print(getData2+"/")
   print(getData)
   data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
+  total = data['High'].sum()
+  total = f'{total:.0f}' 
+  calcRental = data['High'].iloc[-1]
+  calcRental = f'{calcRental:.0f}'
+  total = (int(total)/int(calcRental)) -1
+  total = total *100
+  valorAtual = data['Close'].iloc[-1]
+  valorAntigo = data['Close'].values[0]
+  print(CalcRenta(valorAtual,valorAntigo))
   
   return data 
  
