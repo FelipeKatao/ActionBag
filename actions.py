@@ -77,7 +77,33 @@ def getVolumeFinalInicial(indice):
   today = datetime.date.today()
   getData = today.strftime('%Y-%m-%d')
   getData2 = today.strftime('%Y') 
-  getdata3 = today.strftime("%m")       
+  getdata3 = today.strftime("%m")        
   data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
   print(data)
   return np.array([data['Volume'].values[0],data['Volume'].iloc[-1]])
+
+def getVolumeTotal(indice): 
+  today = datetime.date.today()
+  getData = today.strftime('%Y-%m-%d')
+  getData2 = today.strftime('%Y') 
+  getdata3 = today.strftime("%m") 
+  data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
+  calc =  int(data['Volume'].iloc[-1])- int(data['Volume'].values[0])  
+  volumeTotal = f'{calc:.0f}' 
+  return volumeTotal    
+
+def getAbertura(indice):
+  today = datetime.date.today()
+  getData = today.strftime('%Y-%m-%d')
+  getData2 = today.strftime('%Y')
+  getdata3 = today.strftime("%m")       
+  data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
+  return data['Open'].iloc[-1]
+
+def getFechamento(indice):
+  today = datetime.date.today()
+  getData = today.strftime('%Y-%m-%d')
+  getData2 = today.strftime('%Y')
+  getdata3 = today.strftime("%m")       
+  data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
+  return data['Close'].iloc[-1]    

@@ -56,10 +56,10 @@
                       </div>
                   </div>
                   <div class="displays alignCenter" style=" margin-top:8vh;border-bottom: black solid 0.1vh;">
-                    <div id="tickets1" class="bars cor-green"></div>
-                    <div id="tickets1" class="bars1 cor-red"></div>
-                    <div id="tickets1" class="bars2 cor-blue"></div>
-                    <div id="tickets1" class="bars3 cor-red"></div>
+                    
+                    <div  class="bars cor-green bars{{VolumeTicketsTotal[0][1][0]}}"></div>
+                    <div  class="bars1 cor-red bars{{VolumeTicketsTotal[1][1][0]}}"></div>
+                    <div  class="bars2 cor-blue bars{{VolumeTicketsTotal[2][1][0]}}"></div>
                   </div>
                   <div class="display">Analise de volume</div>
               </div>
@@ -79,20 +79,20 @@
                           <tr>
                             <th scope="row">1</th>
                             <td>{{ticket1}}</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>{{ aberturaFechamento[0][1] }}</td>
+                            <td>{{ aberturaFechamento[0][2] }}</td>
                           </tr>
                           <tr>
                             <th scope="row">2</th>
                             <td>{{ticket2}}</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>{{ aberturaFechamento[1][1] }}</td>
+                            <td>{{ aberturaFechamento[1][2] }}</td>
                           </tr>
                           <tr>
                             <th scope="row">3</th>
                             <td>{{ticket3}}</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>{{ aberturaFechamento[2][1] }}</td>
+                            <td>{{ aberturaFechamento[2][2] }}</td>
                           </tr>
                         </tbody>
                       </table>

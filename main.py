@@ -30,10 +30,16 @@ def ticketloadPeriod(ticket):
 
 @app.route('/acao')       
 def ticketlist(): 
-    return render_template("acao.html")      
+    return render_template("acao.html") 
+
 @app.route('/dashboard/<string:ticket1>/<string:ticket2>/<string:ticket3>')
 def dashboard(ticket1,ticket2,ticket3):
-    return render_template("dashboard.html",ticket1=ticket1,ticket2=ticket2,ticket3=ticket3)  
+    ticketRead1 = ac.getVolumeTotal(ticket1)
+    ticketRead2 = ac.getVolumeTotal(ticket2)
+    ticketRead3 = ac.getVolumeTotal(ticket3)
+    aberturaFechamento = [[ticket1,ac.getAbertura(ticket1),ac.getFechamento(ticket1)],[ticket2,ac.getAbertura(ticket2),ac.getFechamento(ticket2)],[ticket3,ac.getAbertura(ticket3),ac.getFechamento(ticket3)]]
+    VolumeTicketsTotal = [[ticket1,ticketRead1],[ticket2,ticketRead2],[ticket3,ticketRead3]]
+    return render_template("dashboard.html",ticket1=ticket1,ticket2=ticket2,ticket3=ticket3,VolumeTicketsTotal=VolumeTicketsTotal,aberturaFechamento=aberturaFechamento)   
 
 @app.route('/acao/<string:ticket>/<string:dateInit>/<string:dateEnd>')
 def ticketPeriodDate(ticket,dateInit,dateEnd):
