@@ -90,7 +90,7 @@ def getVolumeTotal(indice):
   data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
   calc =  int(data['Volume'].iloc[-1])- int(data['Volume'].values[0])  
   volumeTotal = f'{calc:.0f}' 
-  return volumeTotal    
+  return volumeTotal     
 
 def getAbertura(indice):
   today = datetime.date.today()
@@ -106,4 +106,4 @@ def getFechamento(indice):
   getData2 = today.strftime('%Y')
   getdata3 = today.strftime("%m")       
   data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
-  return data['Close'].iloc[-1]     
+  return data['Close'].iloc[-1]      

@@ -220,7 +220,7 @@ footer{
         text-align: center;
         justify-content: center;
     }
-    .alignCenter{
+    .responsiveRow{
         flex-direction: row;
     }
     .article{
