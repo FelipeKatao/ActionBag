@@ -43,7 +43,7 @@ def ticketResults(ticket):
     volume = ac.getVolumeFinalInicial(ticket)
     return render_template("tickets.html",ticketName = ticketName,ticketResultData = ticketResultData,valorCompra=valorCompra,volume=volume)
 @app.route('/<string:nome>')
-def error(nome):        
+def error(nome):         
     variavel =nome
     print(variavel)
     return render_template("error.html", variavel = variavel)  

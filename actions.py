@@ -50,7 +50,7 @@ def ConsultarIndiceData(indice,periodo,encerramento):
   total = total *100
   valorAtual = data['Close'].iloc[-1]
   valorAntigo = data['Close'].values[0]
-  print(CalcRenta(valorAtual,valorAntigo))
+  print(CalcRenta(valorAtual,valorAntigo)) 
     
   return data 
 

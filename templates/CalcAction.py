@@ -6,4 +6,4 @@ def CalcRenta(Atual,passado):
     valor = valor-1
     valor=valor*100
     valor = f'{valor:.0f}'  
-    return valor       
+    return valor        
