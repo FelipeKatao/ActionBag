@@ -25,6 +25,15 @@ footer{
     padding: 2vh;
     margin-left: 2vh;
 }
+.square-auto{
+    color: #474747;
+    background-color: #dfdfdf;
+    padding: 2vh;
+    margin-left: 2vh;
+    height: 90%;
+    width: 40%;
+    margin-right: 2vh;
+}
 .square h5{
     margin-top: 4vh;
 }
@@ -39,6 +48,17 @@ footer{
     margin: 1vh;
     width: 100%;
 }
+.displays h4{
+    margin-left: 2vh;
+}
+.top-grow3{
+    flex-grow: 3;
+    margin-top: 2vh;
+}
+.top-grow2{
+    flex-grow: 2;
+    margin-top: 2vh;
+}
 .banner-01{
     flex-grow: 4;
     flex-wrap: wrap;
@@ -47,10 +67,23 @@ footer{
     color: #474747;
     text-align: center;
     justify-content: center;
+}
+.banner-02{
+    flex-grow: 4;
+    flex-wrap: wrap;
+    height: 50vh;
+    text-align: center;
+    justify-content: center;
     
 }
+
 .col{
+    display: flex;
     flex-flow: column wrap;
+}
+.row{
+    display: flex;
+    flex-flow: row wrap;
 }
 .growDisplay{
     flex-grow: 4;
@@ -63,7 +96,52 @@ footer{
 {
     justify-content: center;
 }
-
+.spaceElement{
+    height: 60%;
+}
+/*Elementos graficos */
+.bars{
+    height: 1vh; /*percentual de 0 ate 3% */
+    width: 6vh;
+    float: left;
+    margin-left: 1vh;
+    margin-top: -0vh;
+}
+.bars1{
+    height: 4vh; /*Percentual de 4% até 10%*/
+    width: 6vh;
+    float: left;
+    margin-left: 1vh;
+    margin-top: -3vh;
+}
+.bars2{
+    height: 8vh; /**/
+    width: 6vh;
+    float: left;
+    margin-left: 1vh;
+    margin-top: -7vh;
+}
+.bars3{
+    height: 12vh; /*Max é 20vh */
+    width: 6vh;
+    float: left;
+    margin-left: 1vh;
+    margin-top: -11vh;
+}
+.cor-green
+{
+    background-color: #56c956;
+}
+.cor-red{
+    background-color: #ff7676;
+}
+.cor-blue{
+    background-color: #7d7dff;
+}
+.article{
+    justify-content: center;
+}
+/*Responsividade*/
 @media only screen and (max-width: 600px) {
     .alignCenter {
       flex-flow: column;
@@ -77,5 +155,34 @@ footer{
         padding: 2vh;
         margin-top: 4vh; 
       }
+      .square-auto{
+        height: 50vh;
+        width: 80vh;
+        color: #474747;
+        background-color: #dfdfdf;
+        padding: 2vh;
+        margin-top: 4vh; 
+      }
+      .row{
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          align-content: center;
+          padding-bottom: 2vh;
+      }
+      .banner-02{
+        flex-grow: 4;
+        flex-wrap: wrap;
+        height: auto;
+        color: #474747;
+        text-align: center;
+        justify-content: center;
+    }
+    .alignCenter{
+        flex-direction: row;
+    }
+    .article{
+        flex-direction: column;
+    }
     
   }

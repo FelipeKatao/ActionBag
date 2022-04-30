@@ -31,6 +31,9 @@ def ticketloadPeriod(ticket):
 @app.route('/acao')       
 def ticketlist(): 
     return render_template("acao.html")      
+@app.route('/dashboard/<string:ticket1>/<string:ticket2>/<string:ticket3>')
+def dashboard(ticket1,ticket2,ticket3):
+    return render_template("dashboard.html",ticket1=ticket1,ticket2=ticket2,ticket3=ticket3)  
 
 @app.route('/acao/<string:ticket>/<string:dateInit>/<string:dateEnd>')
 def ticketPeriodDate(ticket,dateInit,dateEnd):
