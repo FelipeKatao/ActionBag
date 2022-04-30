@@ -28,6 +28,10 @@ def ticketloadPeriod(ticket):
     ticketRead = ac.ConsultarIndice(ticket,0)  
     return render_template("tickets.html",ticketSet = ticketRead)
 
+@app.route('/acao')       
+def ticketlist(): 
+    return render_template("acao.html")      
+
 @app.route('/acao/<string:ticket>/<string:dateInit>/<string:dateEnd>')
 def ticketPeriodDate(ticket,dateInit,dateEnd):
     ticketname = ticket
