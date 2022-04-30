@@ -3,6 +3,7 @@ import datetime
 import yfinance as yf
 import pandas as pd
 import json
+import numpy as np
 
 from templates.CalcAction import CalcRenta
 
@@ -50,6 +51,33 @@ def ConsultarIndiceData(indice,periodo,encerramento):
   valorAtual = data['Close'].iloc[-1]
   valorAntigo = data['Close'].values[0]
   print(CalcRenta(valorAtual,valorAntigo))
-  
+    
   return data 
+
+def consultarRentabilidadeIndice(indice):
+  today = datetime.date.today()
+  getData = today.strftime('%Y-%m-%d')
+  getData2 = today.strftime('%Y')
+  getdata3 = today.strftime("%m")       
+  data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
+  valorAtual = data['Close'].iloc[-1]
+  valorAntigo = data['Close'].values[0]
+  return CalcRenta(valorAtual,valorAntigo)
+
+def compraInicial(indice):
+  today = datetime.date.today()
+  getData = today.strftime('%Y-%m-%d')
+  getData2 = today.strftime('%Y') 
+  getdata3 = today.strftime("%m")       
+  data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
+  print(data)
+  return data['Close'].values[0]
  
+def getVolumeFinalInicial(indice): 
+  today = datetime.date.today()
+  getData = today.strftime('%Y-%m-%d')
+  getData2 = today.strftime('%Y') 
+  getdata3 = today.strftime("%m")       
+  data = pandas_datareader.get_data_yahoo(indice,start=getData2+"-"+getdata3+"-01",end=getData)
+  print(data)
+  return np.array([data['Volume'].values[0],data['Volume'].iloc[-1]])

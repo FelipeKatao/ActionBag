@@ -34,7 +34,14 @@ def ticketPeriodDate(ticket,dateInit,dateEnd):
     print("ticket")
     ticketRead = ac.ConsultarIndiceData(ticket,dateInit,dateEnd)
     return render_template("tickets.html",ticketSet=ticketRead,dateInit=dateInit,dateEnd=dateEnd,ticketname = ticketname)  
-
+@app.route('/result/<string:ticket>')
+def ticketResults(ticket): 
+    ticketName = ticket
+    ticketResultData = int(ac.consultarRentabilidadeIndice(ticket))
+    valorCompra = ac.compraInicial(ticket)
+    valorCompra = f'{valorCompra:.2f}'
+    volume = ac.getVolumeFinalInicial(ticket)
+    return render_template("tickets.html",ticketName = ticketName,ticketResultData = ticketResultData,valorCompra=valorCompra,volume=volume)
 @app.route('/<string:nome>')
 def error(nome):        
     variavel =nome

@@ -17,7 +17,22 @@ footer{
     flex-flow: column wrap;
     height: 100%;
 }
-
+.square{
+    height: 40vh;
+    width: 50vh;
+    color: #474747;
+    background-color: #dfdfdf;
+    padding: 2vh;
+    margin-left: 2vh;
+}
+.square h5{
+    margin-top: 4vh;
+}
+.square h6{
+    margin-top: 4vh;
+    font-style: italic;
+    text-align: center;
+}
 .displays{
     display: flex;
     padding: 2vh;
@@ -54,4 +69,13 @@ footer{
       flex-flow: column;
       align-items: center;
     }
+    .square {
+        height: 40vh;
+        width: 80vh;
+        color: #474747;
+        background-color: #dfdfdf;
+        padding: 2vh;
+        margin-top: 4vh;
+      }
+    
   }
