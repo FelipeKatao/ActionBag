@@ -70,7 +70,7 @@ def ticketResults(ticket):
 def error(nome):         
     variavel =nome
     print(variavel)
-print("!")
+    print("!")
     return render_template("error.html", variavel = variavel)  
 
 if __name__ == "__main__":
