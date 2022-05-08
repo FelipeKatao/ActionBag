@@ -54,6 +54,12 @@ def ticketPeriodDate(ticket,dateInit,dateEnd):
 @app.route('/result/<string:ticket>')
 def ticketResults(ticket): 
     ticketName = ticket
+    if(ticket =="APPL"):
+        print("")
+    if(ticket == "BFB"):
+        print("lol")
+    if(ticket =="KLS"):
+        print("456f")
     ticketResultData = int(ac.consultarRentabilidadeIndice(ticket))
     valorCompra = ac.compraInicial(ticket)
     valorCompra = f'{valorCompra:.2f}'
@@ -64,6 +70,7 @@ def ticketResults(ticket):
 def error(nome):         
     variavel =nome
     print(variavel)
+print("!")
     return render_template("error.html", variavel = variavel)  
 
 if __name__ == "__main__":
